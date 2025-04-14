@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>json</title>
+  </head>
+  <body>
+    <script>
+    let product={
+        company:"mango",
+        price:200,
+        color:"red",
+        size:"L",
+        'delivery date':"2023-10-10",
+        ratings:{
+            stars:4.7,
+            reviews:1000,
+        },
+    }
+    //   console.log( typeof product);
+    //   let str=JSON.stringify(product);
+    //   console.log(str);
+    //   console.log( typeof str);
+    //  let newproduct=JSON.parse(str);
+    //  console.log(newproduct);
+      // localStorage.setItem("name","tharunm");
+      // localStorage.setItem("price",123456);
+      console.log(localStorage.getItem("name"));
+      console.log(localStorage.getItem("price"));
+      localStorage.setItem("product",JSON.stringify(product));
+      console.log(localStorage.getItem("product"));
+      let p2=JSON.parse(localStorage.getItem("product"));
+      console.log(p2);
+      localStorage.removeItem("name");
+      // for clearing all the data in local storage
+      localStorage.clear();
+    </script>
+  </body>
+</html>

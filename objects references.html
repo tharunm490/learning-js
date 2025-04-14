@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // let obj1={
+      //   name:"tharunm",
+      //   age:18,
+      // }
+      // let obj2=obj1;
+      // console.log(obj1);
+      // console.log(obj2);
+      // obj1.food="idle";
+      // // console.log(obj1);
+      // // console.log(obj2);
+      // // obj2.food="dosa";
+      // // we cannot compare two objects using == or === but we can compare
+      // //  the reference of the objects like this by comparing the address
+      // //  of the objects
+      // console.log(obj1==obj2); // true
+      // console.log(obj1===obj2); // true
+      // let a={
+      //   name:"tharunm",
+      //   age:18,
+      // }
+      // let b={
+      //   name:"tharnm", 
+      //   age:19,
+      // }
+      // console.log(a==b); // false
+      // console.log(a===b); // false
+      // object destructuring
+      let obj1={
+        name:"tharunm",
+        age:18,
+        food:"dosa",
+      }
+      let {name,age}=obj1;
+      console.log(name); // tharunm
+      console.log(age); // 18
+      // method shortend
+      let obj2={
+        name:"tharunm",
+        age:18,
+        food:"dosa",
+        display:function(){
+          console.log(`my name is ${this.name} and my age is ${this.age}`);
+        },
+      }
+      // method shortend
+      let obj3={
+        name:"tharunm",
+        age:18,
+        food:"dosa",
+        display(){
+          console.log(`my name is ${this.name} and my age is ${this.age}`);
+        },
+      }
+
+    </script>
+  </body>
+</html>

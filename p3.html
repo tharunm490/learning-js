@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object References</title>
+  </head>
+  <body>
+    <script>
+      let obj1={
+        product:"t-shirt",
+        company:"mango",
+        price:200,
+        color:"red",
+        size:"L",
+        'delivery date':"2023-10-10",
+      }
+      // let obj2=obj1;
+      // console.log(obj1);
+      // console.log(obj2);
+      // obj1.color="blue";
+      // console.log(obj1);
+      // console.log(obj2);
+      // console.log(obj1['delivery date']);
+      let obj2={
+        product:"t-shirt",
+        company:"mango",
+        price:200,
+        color:"red",
+        size:"L",
+        'delivery date':"2023-10-10",
+      }
+      // let obj2="dfghuiolkmn";
+      function indentical (obj1,obj2){
+        if(typeof obj1 !=='object' || typeof obj2 !=='object'){
+          console.warn("not an object");
+          return false;
+        }
+        else if(obj1===obj2){
+          return true;
+        }
+        else if(obj1.product===obj2.product &&
+          obj1.price===obj2.price &&
+          obj1.color===obj2.color &&
+          obj1.size===obj2.size 
+        ){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+      console.log(indentical(obj1,obj2));
+
+    </script>
+  </body>
+</html>

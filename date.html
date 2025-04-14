@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>date</title>
+  </head>
+  <body>
+    <!-- <button class="btn">click me</button> -->
+     <div class="a" >thia is a div</div>
+    <script>
+      // let mydate=new Date();
+      // console.log(mydate); 
+      // console.log(mydate.getDate()); 
+      // console.log(mydate.getFullYear()); 
+      // console.log(mydate.getHours()); 
+      // console.log(mydate.getMinutes());
+      // console.log(mydate.getDay()); 
+      // console.log(mydate.getTime());
+      // console.log(mydate.getMonth());
+      let btn=document.createElement("button");
+      let v=document.createElement("div");
+      btn.innerHTML="<h3>click me</h3>";
+      document.querySelector(".a").appendChild(btn);
+      document.querySelector(".a").removeChild(btn);
+      document.querySelector(".a").replaceChild(v, btn);
+    </script>
+  </body>
+</html>

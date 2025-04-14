@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        text-align: center;
+      }
+      img{
+        height: 200px;
+        width: 200px;
+      }
+
+    </style>
+  </head>
+  <body>
+     <h1>Bat Ball stump Game</h1>
+     <button onclick="playGame('bat')"><img src="97725cc1-cca6-4a4b-8c2f-d809aa1a17a6.jpg"></button>
+     <button onclick="playGame('ball')"><img src="cricket-ball-isolated.jpg"></button>
+     <button onclick="playGame('stump')"><img src="cricket-306902_1280.png"></button>
+      <h2>Click on the button to play the game</h2>
+      <button onclick="displayScore()">Show Scoreboard</button>
+      <button onclick="localStorage.clear();
+      score = {
+    win: 0,
+    lost: 0,
+    tie: 0,
+      }
+      ">Reset</button>
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+    
+   <script>
+let str = localStorage.getItem("score");
+let score;
+if(str !== null){
+  score = JSON.parse(str);
+  // score.displayscore = function() {
+  //   (`Your score is ${score.win} wins, ${score.lost} 
+  //   losses, and ${score.tie} ties.`);
+  // }
+}
+ else {
+  score = {
+    win: 0,
+    lost: 0,
+    tie: 0,
+    // displayscore: function() {
+    //   (`Your score is ${score.win} wins, ${score.lost} 
+    //   losses, and ${score.tie} ties.`);
+    // }
+  }
+};
+function displayScore() {
+  document.getElementById("score").innerHTML = `Your score: ${score.win} wins, ${score.lost} losses, and ${score.tie} ties.`;
+}
+
+    function playGame(userChoice) {
+      let computerChoice;
+      let randomNumber = Math.random() * 3;
+      if (randomNumber > 0 && randomNumber <= 1) {
+        computerChoice = 'bat';
+        
+      } else if (randomNumber > 1 && randomNumber <= 2) {
+        computerChoice = 'ball';
+      } else {
+        computerChoice = 'stump';
+      }
+      let result;
+      if(userChoice === 'bat') {
+        if (computerChoice === 'ball') {
+          result = 'you won';
+          score.win++;
+        } else if (computerChoice === 'stump') {
+          result = 'computer won';
+          score.lost++;
+        } else {
+          result = 'match tie';
+          score.tie++;
+        }
+      } else if (userChoice === 'stump') {
+        if (computerChoice === 'bat') {
+          result = 'you won';
+          score.win++;
+        } else if (computerChoice === 'ball') {
+          result = 'computer won';
+          score.lost++;
+        } else {
+          result = 'match tie';
+          score.tie++;
+        }
+      } else{
+        if (computerChoice === 'bat') {
+          result = 'computer won';
+          score.lost++;
+        } else if (computerChoice === 'stump') {
+          result = 'you won';
+          score.win++;
+        } else {
+          result = 'match tie';
+          score.tie++;
+        }
+      }
+      document.getElementById("user-move").innerHTML = `Your choice: ${userChoice}`;
+      document.getElementById("computer-move").innerHTML = `Computer choice: ${computerChoice}`;
+      document.getElementById("result").innerHTML = `Result: ${result}`;
+      document.getElementById("score").innerHTML = `Your score: ${score.win} wins, ${score.lost} losses, and ${score.tie} ties.`;
+     localStorage.setItem("score",JSON.stringify(score));
+      // alert(`Your choice is ${userChoice} and computer choice is ${computerChoice}. Result: ${result}
+      //  `);
+      // score.displayscore();
+     
+    }
+   </script>
+  </body>
+</html>
