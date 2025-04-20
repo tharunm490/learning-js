@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      // let array = [1, 2, 3, 4, 5];
+      // let odds = array.filter((num, index) => {
+      //   if (num % 2 === 1) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // });
+      // let y = array.map((num) => {
+      //   return num * num;
+      // });
+      // console.log(y);
+      // console.log(odds);
+      function greet(name, callback) {
+        console.log("Hello, " + name + "!");
+        callback();
+      }
+
+      function sayGoodbye() {
+        console.log("Goodbye!");
+      }
+
+      greet("tharun", sayGoodbye);
+      let sum = (a, b) => {
+        return a + b;
+      };
+      let threesum = (c, sum) => {
+        return c + sum;
+      };
+      console.log(threesum(5, sum(5, 10)));
+    </script>
+  </body>
+</html>

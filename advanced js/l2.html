@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      // let promise = new Promise((resolve, reject) => {
+      //   console.log(" i am in promise");
+      //   // resolve(123);
+      //   reject(" error occured");
+      // });
+      // function getData(data) {
+      //   console.log(`get data from server ${data}`);
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       if (data === "tharun") {
+      //         resolve("success");
+      //       } else {
+      //         reject("error");
+      //       }
+      //     }, 6000);
+      //   });
+      // }
+      //getData("tharun");
+      // let promise = () => {
+      //   return new Promise((resolve, reject) => {
+      //     console.log(" i am in promise");
+      //     reject(" network error");
+      //   });
+      // };
+      // promise();
+
+      // let p = promise();
+      // p.then(() => {
+      //   console.log("success");
+      // });
+      // p.catch((error) => {
+      //   console.log(error);
+      // });
+      function asynfn() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(" success ");
+          }, 4000);
+        });
+      }
+      console.log("data1 is fetching ...............");
+      function asynfn2() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(" success2 ");
+          }, 4000);
+        });
+      }
+      let p = asynfn();
+      p.then((resolve) => {
+        console.log(resolve);
+        console.log("data2 is fetching ...............");
+        let p2 = asynfn2();
+        p2.then((resolve) => {
+          console.log(resolve);
+        });
+      });
+      // let p2 = asynfn2();
+      // p.then((resolve) => {
+      //   console.log(resolve);
+      // });
+      // p.catch((error) => {
+      //   console.log(error);
+      // });
+      // p2.then((resolve) => {
+      //   console.log(resolve);
+      // });
+      // p2.catch((error) => {
+      //   console.log(error);
+      // });
+      // this can be resolved by promise chaining method
+    </script>
+  </body>
+</html>

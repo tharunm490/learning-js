@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      // function callback
+      // let sum = (a, b) => {
+      //   return a + b;
+      // };
+      // let threesum = (c, sum) => {
+      //   return c + sum;
+      // };
+      // let x = threesum(1, sum(1, 4));
+      // console.log(x);
+      // // asyn function
+      // let alarm = () => {
+      //   console.log("get up");
+      // };
+      // alarm();
+      // setTimeout(function () {
+      //   console.log("go to collage");
+      // }, 2000);
+      // // let v=()=>{
+      // //  console.log("go to collage");
+      // // }
+      // // setTimeout(v, 2000);
+      // alarm();
+      // let getData = (data, next) => {
+      //   console.log(`get data from server ${data}`);
+      //   setTimeout(function () {
+      //     console.log(`data : ${data} `);
+      //     if (next) {
+      //       next();
+      //     }
+      //   }, 2000);
+      // };
+      // let getData = (data) => {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(function () {
+      //       console.log(`data : ${data} `);
+      //       resolve(" success ");
+      //     }, 4000);
+      //   });
+      // };
+      // // using promise chain method
+      // getData("tharun").then((resolve) => {
+      //   console.log(resolve);
+      //   getData("how are you").then((resolve) => {
+      //     console.log(resolve);
+      //     getData(" ok bye").then((resolve) => {
+      //       console.log(resolve);
+      //     });
+      //   });
+      // });
+      // using callback hell
+      // getData("tharun", () => {
+      //   getData("hello", () => {
+      //     getData("bye", () => {
+      //       getData(" !!!! ");
+      //     });
+      //   });
+      // });
+
+      //getData("bye");
+      // all three are getting at the same time
+      // let getData = (data, next) => {
+      //   console.log(" data is fetching ......");
+      //   setTimeout(() => {
+      //     console.log(`data is fetched ${data}`);
+      //     if (next) {
+      //       next();
+      //     }
+      //   }, 2000);
+      // };
+      // getData(1, () => {
+      //   getData(3, () => {
+      //     getData(4, () => {
+      //       getData(5);
+      //     });
+      //   });
+      // });
+      let sum = (a, b, next) => {
+        setTimeout(() => {
+          console.log(`sum of ${a} and ${b} is ${a + b}`);
+          if (next) {
+            next();
+          }
+        }, 2000);
+      };
+      sum(1, 2, () => {
+        sum(3, 4, () => {
+          sum(6, 4, () => {
+            sum(0, 9);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

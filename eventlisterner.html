@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button id="btn">click me</button>
+    <script>
+      let btn = document.querySelector("#btn");
+      let b = (event = () => {
+        console.log(" i am clicked");
+      });
+      btn.addEventListener("click", b);
+
+      let printdate = (event = () => {
+        console.log(new Date());
+      });
+      btn.addEventListener("mouseover", printdate);
+      btn.removeEventListener("click", b);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      // let sum = function (num1, num2) {
+      //   return num1 + num2;
+      // };
+      // //console.log(sum(5, 10));
+      // let threesum = function (num3, sum) {
+      //   return num3 + sum;
+      // };
+      // // console.log(threesum(5, sum(5, 10)));
+      // // setTimeout(function () {
+      // //   console.log("Hello World!");
+      // // }, 2000);
+      // let date = new Date();
+      // let time = () => {
+      //   console.log(`Hello World!${new Date()}`);
+      // };
+      // let a = setInterval(time, 1000);
+      // setTimeout(() => {
+      //   clearInterval(a);
+      // }, 5000);
+
+      // // setTimeout(time, 2000);
+      let alarm = () => {
+        console.log(" get up ");
+      };
+      setTimeout(alarm, 1000);
+      let a = setInterval(alarm, 1000);
+      //clearInterval(alarm, 2000);
+      //clearTimeout(alarm, 2000);
+      setTimeout(() => {
+        clearInterval(a);
+      }, 2000);
+    </script>
+  </body>
+</html>
